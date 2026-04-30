@@ -1,0 +1,25 @@
+## Day 1 – Network Baseline (Nmap)
+
+### Scan Scope
+- Network Range: 192.168.2.0/24
+- Total Hosts Discovered: 3
+- Scan Type: TCP port scan
+
+### Host Summary
+
+**192.168.2.1 (Home Router)**
+- Open ports: 53 (DNS), 80 (HTTP), 443 (HTTPS), 445 (SMB), 9000, 49152
+- Observation: Multiple management and service ports exposed, typical of ISP-provided router devices.
+
+**192.168.2.26 (Mobile Device)**
+- Open ports: 49152, 62078
+- Observation: Likely mobile endpoint with device synchronization services.
+
+**192.168.2.42 (Local Machine)**
+- Open ports: 135 (MSRPC), 139 (NetBIOS), 445 (SMB), 16992
+- Observation: Standard Windows services visible on internal network.
+
+### SOC Analyst Notes
+- Network behavior appears normal for a residential environment.
+- No indicators of active compromise observed.
+- Baseline established for future anomaly detection.
