@@ -1,0 +1,69 @@
+# SOC Home Lab — Network Discovery & Wireshark Baseline
+
+[![Nmap](https://img.shields.io/badge/Nmap-7.99-purple)]()
+[![Wireshark](https://img.shields.io/badge/Wireshark-Baseline-1679A7?logo=wireshark&logoColor=white)]()
+[![MITRE](https://img.shields.io/badge/MITRE%20ATT%26CK-3%20Techniques-CC0000)](https://attack.mitre.org/)
+
+> Documented internal network discovery and traffic baseline assessment of an authorized residential SOC lab. Two professional forensic reports with SHA-256 chain of custody. Five findings identified including SMB exposure on perimeter router and Intel AMT presence on workstation.
+
+---
+
+## What's Inside
+
+| Report | What It Covers | Findings |
+|--------|----------------|----------|
+| **Network Discovery & Risk Assessment** | Nmap scan of `192.168.2.0/24`, 3 live hosts identified | 5 (1 High, 1 Medium, 2 Low, 1 Info) |
+| **Network Traffic Baseline Analysis** | 5.5-min Wireshark capture, 4,665 packets, 28 TLS destinations | 4 + 1 baseline observation |
+
+---
+
+## Key Findings
+
+| ID | Finding | MITRE | Risk |
+|----|---------|-------|------|
+| F-001 | SMB exposed on perimeter router | T1021.002 | 🟠 High |
+| F-002 | Intel AMT (CVE-2017-5689) detected | — | 🟡 Medium |
+| F-006 | WPAD name resolution requests | T1557.001 | 🟡 Medium |
+| F-007 | Unknown LAN host found via passive monitoring | T1046 | 🟢 Low |
+| F-008 | Plaintext DNS resolution | T1040 | 🟢 Low |
+
+---
+
+## Repository Structure
+
+```
+SOC-Home-Lab/
+├── README.md
+├── reports/
+│   ├── Network_Discovery_Risk_Assessment_Report.docx
+│   └── Network_Traffic_Baseline_Report.docx
+└── evidence/
+    ├── nmap_port_scanning_.png                  ← Full Nmap output
+    ├── SOC_HOME_LAB___INITIAL_NETWORK_SCAN.txt  ← Raw scan log
+    └── wireshark.pcapng                         ← Full packet capture
+```
+
+---
+
+## Skills Demonstrated
+
+- Nmap network reconnaissance and service fingerprinting
+- Wireshark/tshark packet analysis with statistical baselining
+- Risk assessment with CVSS-style severity rating
+- Evidence chain of custody (SHA-256 hashing)
+- Forensic report writing in industry-standard format
+- Passive monitoring vs. active scanning trade-offs
+- MITRE ATT&CK technique mapping
+
+---
+
+## Author
+
+**Sumesh Kumar** — MCTI Graduate Student, University of Guelph
+SOC Analyst | CySA+ Candidate (June 2026) | Toronto, ON
+
+[GitHub](https://github.com/prashersumesh) · [LinkedIn](https://linkedin.com/in/sumeshkumar1901)
+
+---
+
+*Lab project — April–May 2026. Personal training environment, no production data.*
